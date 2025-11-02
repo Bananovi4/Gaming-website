@@ -5,6 +5,7 @@
     padding: 0;
 }
 
+html,
 body {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
@@ -18,6 +19,7 @@ a {
 
 img {
     max-width: 100%;
+    display: block;
 }
 
 .wrapper {
@@ -27,12 +29,17 @@ img {
 }
 
 .container {
-    width: 1000px;
+    max-width: 1000px;
+    padding: 0 30px;
     margin: 0 auto;
 }
 
 header {
-    padding: 50px 0;
+    position: fixed;
+    width: 100%;
+    padding: 50px 60px;
+    box-sizing: border-box;
+    z-index: 1;
 }
 
 header .logo {
@@ -90,9 +97,9 @@ header nav ul li.btn a:hover, .email .block button:hover {
 }
 
 .hero {
-    padding-bottom: 100px;
     position: relative;
-    z-index: 1;
+    margin-top: 144px;
+    padding-bottom: 100px;
 }
 
 .hero--info {
@@ -176,20 +183,18 @@ header nav ul li.btn a:hover, .email .block button:hover {
     padding: 50px 0;
 }
 
-.trending .games .block:not(:first-of-type) {
-    margin-left: 47px;
+.trending > .games {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 48px;
 }
 
-.trending .games span {
-    display: block;
-    text-align: center;
+.trending .games > .block > .block-heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-top: 20px;
-}
-
-.trending .games span img {
-    position: relative;
-    top: 5px;
-    margin-right: 7px;
+    gap: 8px;
 }
 
 .big-text {
@@ -237,7 +242,6 @@ header nav ul li.btn a:hover, .email .block button:hover {
 .features p {
     margin-bottom: 20px;
     text-align: center;
-    width: 800px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -249,30 +253,27 @@ header nav ul li.btn a:hover, .email .block button:hover {
 
 .features .info {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    flex-direction: column;
+    column-gap: 40px;
+    row-gap: 60px;
 }
 
 .features .info .block {
-    /* display: block; */
-    text-align: center;
-    width: 20%;
-    margin: 30px 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* Не получается выравнять надписи ровно под картинками. Блок кода, что идёт дальше, просто мои догадки */
-/* ---------------------------------- */
-.features .info .block p {
-    text-align: justify;
+.features .info .block > p {
+    white-space: nowrap;
 }
-/* ---------------------------------- */
 
 .features .info .block img {
     margin-bottom: 15px;
 }
 
 .projects {
-    padding: 100px 0%;
+    padding: 100px 0;
 }
 
 .projects h3 {
@@ -327,11 +328,9 @@ header nav ul li.btn a:hover, .email .block button:hover {
     margin-top: 30px;
     border-radius: 10px;
     padding: 40px 3%;
-    width: 94%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* Следующю строчку добавил я, чтобы плейсхолдер не вылезал за поля */
     width: 1000px;
 }
 
@@ -344,19 +343,26 @@ header nav ul li.btn a:hover, .email .block button:hover {
     width: 500px;
 }
 
-.email .block input {
+.email > .block {
+}
+
+.email .block .email-field {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     background: #fff;
-    outline: none;
     border: 0;
-    border-radius: 5px;
-    width: 250px;
-    font-family: "Poppins", sans-serif;
+    border-radius: 8px;
+    width: 368px;
     font-weight: 400;
-    padding: 12px 30px;
+    padding: 6px 6px 6px 30px;
     position: relative;
-    right: -100px;
-    z-index: 1;
-    padding-right: 120px;
+}
+
+.email .block .email-field > input {
+    outline: none;
+    border: none;
+    font-family: "Poppins", sans-serif;
 }
 
 .email .block input::placeholder {
@@ -366,7 +372,7 @@ header nav ul li.btn a:hover, .email .block button:hover {
 .email .block button {
     cursor: pointer;
     border: 0;
-    padding: 13px, 17px;
+    padding: 13px 17px;
     position: relative;
     z-index: 2;
     color: #fff;
@@ -495,4 +501,21 @@ footer hr {
 
 footer p {
     text-align: center;
+}
+
+.game-preview {
+    border-radius: 20px;
+}
+
+@media screen and (min-width: 570px) {
+    .features .info {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .features .info {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }

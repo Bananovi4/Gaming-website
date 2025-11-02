@@ -10,15 +10,17 @@
 
 <body>
     <div class="wrapper">
-        <header class="container">
+        <header class="header">
             <span class="logo">logo</span>
             <nav>
                 <ul>
-                    <li class="active"><a href="/">Home</a></li>
+                    <li class="active"><span>Home</span></li>
                     <li><a href="/about.html">About us</a></li>
                     <li><a href="#">Portfolio</a></li>
                     <li><a href="#">News</a></li>
-                    <li class="btn"><a href="#">Contacts</a></li>
+                    <li class="btn">
+                        <a href="#">Contacts</a>
+                    </li>
                 </ul>
             </nav>
         </header>
@@ -27,8 +29,8 @@
             <div class="hero--info">
                 <h2>3D game Dev</h2>
                 <h1>Work that we produce for our clients</h1>
-                <p>Lorem Ipsum is simply dummy text of the printing 
-                    and typesetting industry. Lorem Ipsum has been 
+                <p>Lorem Ipsum is simply dummy text of the printing
+                    and typesetting industry. Lorem Ipsum has been
                     the industry's standard.</p>
                 <button class="btn">Get more details</button>
             </div>
@@ -42,19 +44,31 @@
             <div class="games">
                 <div class="block">
                     <img src="img/game1.png" alt="">
-                    <span><img src="img/fire.svg" alt=""> 40 Followers</span>
+                    <span class="block-heading">
+                        <img src="img/fire.svg" alt="">
+                        <span>40 Followers</span>
+                    </span>
                 </div>
                 <div class="block">
-                    <img src="img/game2.png" alt="">
-                    <span><img src="img/fire.svg" alt=""> 40 Followers</span>
+                    <img class="game-preview" src="img/game2.jpg" alt="">
+                    <span class="block-heading">
+                        <img src="img/fire.svg" alt="">
+                        <span>40 Followers</span>
+                    </span>
                 </div>
                 <div class="block">
                     <img src="img/game3.png" alt="">
-                    <span><img src="img/fire.svg" alt=""> 40 Followers</span>
+                    <span class="block-heading">
+                        <img src="img/fire.svg" alt="">
+                        <span>40 Followers</span>
+                    </span>
                 </div>
                 <div class="block">
                     <img src="img/game4.png" alt="">
-                    <span><img src="img/fire.svg" alt=""> 40 Followers</span>
+                    <span class="block-heading">
+                        <img src="img/fire.svg" alt="">
+                        <span>40 Followers</span>
+                    </span>
                 </div>
             </div>
         </div>
@@ -135,8 +149,8 @@
                     <p>Subscribe to receive the latest news and updates about TDA.
                         We promise not to spam you! </p>
                 </div>
-                <div>
-                    <input type="email" placeholder="Enter email address">
+                <div class="email-field">
+                    <input type="text" placeholder="Enter email address">
                     <button>Continue</button>
                 </div>
             </div>
