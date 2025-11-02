@@ -18,6 +18,7 @@ a {
 
 img {
     max-width: 100%;
+    display: block;
 }
 
 .wrapper {
@@ -27,7 +28,8 @@ img {
 }
 
 .container {
-    width: 1000px;
+    max-width: 1000px;
+    padding: 0 30px;
     margin: 0 auto;
 }
 
@@ -176,20 +178,18 @@ header nav ul li.btn a:hover, .email .block button:hover {
     padding: 50px 0;
 }
 
-.trending .games .block:not(:first-of-type) {
-    margin-left: 47px;
+.trending > .games {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 48px;
 }
 
-.trending .games span {
-    display: block;
-    text-align: center;
+.trending .games > .block > .block-heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-top: 20px;
-}
-
-.trending .games span img {
-    position: relative;
-    top: 5px;
-    margin-right: 7px;
+    gap: 8px;
 }
 
 .big-text {
@@ -237,7 +237,6 @@ header nav ul li.btn a:hover, .email .block button:hover {
 .features p {
     margin-bottom: 20px;
     text-align: center;
-    width: 800px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -249,30 +248,27 @@ header nav ul li.btn a:hover, .email .block button:hover {
 
 .features .info {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    flex-direction: column;
+    column-gap: 40px;
+    row-gap: 60px;
 }
 
 .features .info .block {
-    /* display: block; */
-    text-align: center;
-    width: 20%;
-    margin: 30px 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* Не получается выравнять надписи ровно под картинками. Блок кода, что идёт дальше, просто мои догадки */
-/* ---------------------------------- */
-.features .info .block p {
-    text-align: justify;
+.features .info .block > p {
+    white-space: nowrap;
 }
-/* ---------------------------------- */
 
 .features .info .block img {
     margin-bottom: 15px;
 }
 
 .projects {
-    padding: 100px 0%;
+    padding: 100px 0;
 }
 
 .projects h3 {
@@ -495,4 +491,21 @@ footer hr {
 
 footer p {
     text-align: center;
+}
+
+.game-preview {
+    border-radius: 20px;
+}
+
+@media screen and (min-width: 570px) {
+    .features .info {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .features .info {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
