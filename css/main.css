@@ -5,6 +5,7 @@
     padding: 0;
 }
 
+html,
 body {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
@@ -34,7 +35,11 @@ img {
 }
 
 header {
-    padding: 50px 0;
+    position: fixed;
+    width: 100%;
+    padding: 50px 60px;
+    box-sizing: border-box;
+    z-index: 1;
 }
 
 header .logo {
@@ -92,9 +97,9 @@ header nav ul li.btn a:hover, .email .block button:hover {
 }
 
 .hero {
-    padding-bottom: 100px;
     position: relative;
-    z-index: 1;
+    margin-top: 144px;
+    padding-bottom: 100px;
 }
 
 .hero--info {
@@ -323,11 +328,9 @@ header nav ul li.btn a:hover, .email .block button:hover {
     margin-top: 30px;
     border-radius: 10px;
     padding: 40px 3%;
-    width: 94%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* Следующю строчку добавил я, чтобы плейсхолдер не вылезал за поля */
     width: 1000px;
 }
 
@@ -340,19 +343,26 @@ header nav ul li.btn a:hover, .email .block button:hover {
     width: 500px;
 }
 
-.email .block input {
+.email > .block {
+}
+
+.email .block .email-field {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     background: #fff;
-    outline: none;
     border: 0;
-    border-radius: 5px;
-    width: 250px;
-    font-family: "Poppins", sans-serif;
+    border-radius: 8px;
+    width: 368px;
     font-weight: 400;
-    padding: 12px 30px;
+    padding: 6px 6px 6px 30px;
     position: relative;
-    right: -100px;
-    z-index: 1;
-    padding-right: 120px;
+}
+
+.email .block .email-field > input {
+    outline: none;
+    border: none;
+    font-family: "Poppins", sans-serif;
 }
 
 .email .block input::placeholder {
@@ -362,7 +372,7 @@ header nav ul li.btn a:hover, .email .block button:hover {
 .email .block button {
     cursor: pointer;
     border: 0;
-    padding: 13px, 17px;
+    padding: 13px 17px;
     position: relative;
     z-index: 2;
     color: #fff;
